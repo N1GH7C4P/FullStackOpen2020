@@ -1,0 +1,10 @@
+post http://localhost:3001/api/blogs
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IllvbXlzc3kiLCJpZCI6IjVlZDIxZmFlYmY2ZTM0M2QzODM4OTQ5NyIsImlhdCI6MTU5MDgyODk3NH0.wP32Da0oLObQj6QienS1qtLgoLKKqe4fVJp2dtz3SdI
+
+{	
+	"author": "soini",
+	"title": "ploki",
+	"likes": 3,
+	"url": "ploki.fi"
+}
