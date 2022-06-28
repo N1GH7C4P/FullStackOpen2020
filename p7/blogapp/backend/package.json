@@ -1,0 +1,47 @@
+{
+  "name": "backend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.19.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "cross-env": "^5.2.1",
+    "csstools": "^0.1.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "heroku": "^7.26.2",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.25",
+    "mongoose": "^5.6.2",
+    "mongoose-unique-validator": "^2.0.3",
+    "morgan": "^1.9.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-moment": "^0.9.2",
+    "react-time": "^4.3.0"
+  },
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node index.js",
+    "watch": "cross-env NODE_ENV=development nodemon index.js",
+    "build:ui": "rm -rf build && cd ../../osa5/frontend && npm run build --prod && cp -r build ../../osa5/backend/",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && npm run deploy",
+    "deploy": "git push heroku master",
+    "logs:prod": "heroku logs --tail",
+    "lint": "eslint .",
+    "test": "cross-env NODE_ENV=test jest --verbose --runInBand",
+    "start:test": "cross-env NODE_ENV=test node index.js"
+  },
+  "author": "Kimmo",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.1",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
